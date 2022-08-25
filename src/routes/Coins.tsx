@@ -83,7 +83,7 @@ function Coins() {
         <CoinsList>
           {coins.map((coin) => (
             <Coin key={coin.id}>
-              <Link to={`/${coin.id}`} state={coin.name}>
+              <Link to={`/${coin.id}2`} state={{ name: coin.name }}>
                 <Img
                   src={`https://coinicons-api.vercel.app/api/icon/${coin.symbol.toLowerCase()}`}
                 />
