@@ -5,7 +5,6 @@ import Coins from "./routes/Coins";
 interface IRouterProps {}
 
 function Router({}: IRouterProps) {
-  console.log(process.env.PUBLIC_URL);
   return (
     <BrowserRouter>
       <Routes>

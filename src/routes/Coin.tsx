@@ -84,6 +84,14 @@ const Tab = styled.span<{ isActive: boolean }>`
   }
 `;
 
+const BackBtn = styled.span`
+  padding: 10px 20px;
+  margin-right: 20px;
+  border-radius: 10px;
+  border: 1px solid white;
+  background-color: ${(props) => props.theme.cardBgColor};
+`;
+
 interface Params {
   coinId: string;
 }
@@ -195,6 +203,9 @@ function Coin({}: ICoinProps) {
         </title>
       </Helmet>
       <Header>
+        <Link to={`${process.env.PUBLIC_URL}/`}>
+          <BackBtn>Back</BackBtn>
+        </Link>
         <Title>
           {state?.name ? state.name : loading ? "Loading..." : infoData?.name}
         </Title>
