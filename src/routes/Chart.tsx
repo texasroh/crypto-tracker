@@ -81,7 +81,7 @@ function Chart({ coinId }: ChartProps) {
                         {
                             name: "Price",
                             data: data?.map((price) => [
-                                [price.time_close],
+                                price.time_close,
                                 [
                                     price.open,
                                     price.high,
@@ -101,7 +101,6 @@ function Chart({ coinId }: ChartProps) {
                             toolbar: { show: false },
                             background: "transparent",
                         },
-                        stroke: { curve: "smooth", width: 4 },
                         grid: { show: false },
                         xaxis: {
                             type: "datetime",
@@ -109,17 +108,9 @@ function Chart({ coinId }: ChartProps) {
                             axisTicks: { show: false },
                             axisBorder: { show: false },
                             tooltip: { enabled: false },
-                            categories: data?.map((row) => row.time_close),
+                            // categories: data?.map((row) => row.time_close),
                         },
                         yaxis: { show: false },
-                        fill: {
-                            type: "gradient",
-                            gradient: {
-                                gradientToColors: ["#0be881"],
-                                stops: [0, 100],
-                            },
-                        },
-                        colors: ["#0fbcf9"],
                         tooltip: {
                             y: {
                                 formatter: (value) => `$ ${value.toFixed(2)}`,
