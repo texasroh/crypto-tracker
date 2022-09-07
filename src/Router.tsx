@@ -5,11 +5,12 @@ import Coins from "./routes/Coins";
 interface IRouterProps {}
 
 function Router({}: IRouterProps) {
+  console.log(process.env.PUBLIC_URL);
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Coins />}></Route>
-        <Route path="/:coinId/*" element={<Coin />}></Route>
+        <Route path={`${process.env.PUBLIC_URL}/`} element={<Coins />}></Route>
+        <Route path={`/:coinId/*`} element={<Coin />}></Route>
       </Routes>
     </BrowserRouter>
   );
